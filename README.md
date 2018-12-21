@@ -14,7 +14,7 @@ Networking plugin for pod networking in [Kubernetes](https://kubernetes.io/) usi
 ## Setup
 Download the latest version of the [yaml](./config/) and apply it the cluster.
 
-```
+```bash
 kubectl apply -f aws-k8s-cni.yaml
 ```
 
@@ -24,7 +24,7 @@ The default manifest expects `--cni-conf-dir=/etc/cni/net.d` and `--cni-bin-dir=
 
 L-IPAM requires following [IAM policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html):
 
-```
+```json
  {
      "Effect": "Allow",
      "Action": [
