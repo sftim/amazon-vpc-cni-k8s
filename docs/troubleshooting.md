@@ -16,7 +16,7 @@ You can check the available IP addresses in AWS console:
 
 ### Tip: Make sure there are enough ENIs and IPs for Pods in the cluster
 
-We provide a tool [**cni-metrics-helper**](./misc/cni_metrics_helper.yaml) which can show aggregated ENIs and IPs information at the cluster level.  
+We provide a tool [**cni-metrics-helper**](./misc/cni_metrics_helper.yaml) which can show aggregated ENIs and IPs information at the cluster level.
 
 You can optionally push them to cloudwatch.  For example:
 
@@ -44,19 +44,19 @@ To avoid Pod deployment delay, you can configure ipamD to have a higher [**WARM\
 ### debugging logs are stored in
 ```
 /var/log/aws-routed-eni
-[ec2-user@ip-192-168-188-7 aws-routed-eni]$ ls 
+[ec2-user@ip-192-168-188-7 aws-routed-eni]$ ls
 ipamd.log.2018-05-15-21  ipamd.log.2018-05-16-02  ipamd.log.2018-05-16-07  ipamd.log.2018-05-16-12  ipamd.log.2018-05-16-17  plugin.log.2018-05-16-00  plugin.log.2018-05-16-19
 ipamd.log.2018-05-15-22  ipamd.log.2018-05-16-03  ipamd.log.2018-05-16-08  ipamd.log.2018-05-16-13  ipamd.log.2018-05-16-18  plugin.log.2018-05-16-02
 ipamd.log.2018-05-15-23  ipamd.log.2018-05-16-04  ipamd.log.2018-05-16-09  ipamd.log.2018-05-16-14  ipamd.log.2018-05-16-19  plugin.log.2018-05-16-03
 ipamd.log.2018-05-16-00  ipamd.log.2018-05-16-05  ipamd.log.2018-05-16-10  ipamd.log.2018-05-16-15  ipamd.log.2018-05-16-20  plugin.log.2018-05-16-04
 ipamd.log.2018-05-16-01  ipamd.log.2018-05-16-06  ipamd.log.2018-05-16-11  ipamd.log.2018-05-16-16  ipamd.log.2018-05-16-21  plugin.log.2018-05-16-14
-[ec2-user@ip-192-168-188-7 aws-routed-eni]$ 
+[ec2-user@ip-192-168-188-7 aws-routed-eni]$
 ```
 
 ### collecting node level tech-support bundle for offline troubleshooting
 
 ```
-[root@ip-192-168-188-7 aws-routed-eni]# /opt/cni/bin/aws-cni-support.sh 
+[root@ip-192-168-188-7 aws-routed-eni]# /opt/cni/bin/aws-cni-support.sh
 
 // download
 /var/log/aws-routed-eni/aws-cni-support.tar.gz
@@ -72,7 +72,7 @@ ipamd.log.2018-05-16-01  ipamd.log.2018-05-16-06  ipamd.log.2018-05-16-11  ipamd
                                  Dload  Upload   Total   Spent    Left  Speed
 100  2589    0  2589    0     0   2589      0 --:--:-- --:--:-- --:--:--  505k
 {
-    "AssignedIPs": 46,  
+    "AssignedIPs": 46,
     "ENIIPPools": {
         "eni-0248f7351c1dab6b4": {
             "AssignedIPv4Addresses": 14,
@@ -174,7 +174,7 @@ go_goroutines 20
 ...
 ```
 
-## cni-metrics-helper 
+## cni-metrics-helper
 
 The following show how cni-metrics-helper works in a cluster:
 
@@ -212,6 +212,3 @@ I0516 17:11:58.489685       7 metrics.go:340] Produce COUNTER metrics: ipamdErr,
 I0516 17:11:58.489695       7 metrics.go:350] Produce GAUGE metrics: eniAllocated, value: 799.000000
 I0516 17:11:58.489715       7 metrics.go:350] Produce GAUGE metrics: maxIPAddresses, value: 11200.000000
 ```
-
-
-
